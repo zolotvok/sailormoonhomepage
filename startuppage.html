@@ -1,0 +1,109 @@
+<html>
+<head>
+	<title>home</title>
+	<style>
+html{
+background-color:#FFD5FF
+}
+input{
+width: 100%;
+      height: 45px;
+      margin: 0 auto;
+      border: none;
+      border:solid 1px #ccc;
+      border-radius: 20px;
+      text-align:center;
+      
+}
+#smrun{
+  display: block;
+  max-width: 200px;
+  height: auto;
+  margin-left: 55%;
+  margin-right: auto;
+  margin-bottom: 25%;
+
+}
+#luna{
+display: block;
+max-width: 50px;
+height: auto;
+margin-bottom: -28%;
+margin-left: 3%
+}
+#src{
+height: 45px;
+width: 500px;
+position: absolute;
+left: 50%;
+top: 40%;
+transform: translate(-50%, -50%);
+}
+#apps{
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%)
+}
+#pictures{
+width: 500px;
+position: absolute;
+left:50%;
+top: 40%;
+transform: translate(-50%,-50%);
+
+}
+#tm{
+position: absolute;
+left:97%;
+top: 97%;
+transform: translate(-50%,-50%);
+}
+
+	</style>
+	<script>
+	function search(){
+		input=document.getElementById("sear").value;
+		window.open("https://www.online-biblia.ro/bible/search/kw/"+input, "_self");
+		}
+	</script>
+
+</head>
+
+	<body>
+	<div id="pictures">
+		<img src="luna2.png" id="luna">
+		<img src="smrun.png" id="smrun">
+	</div>
+	<div id="src">		
+	<input type="text" placeholder="Search" id="sear" onchange="search()">
+	</div>
+	<div id="apps">
+		<a href="https://www.youtube.com/">youtube</a> | <a href="https://play.hbomax.com/profile/select">hbomax</a> | <a href="https://4chan.org/">4chan</a> | <a href="https://open.spotify.com">spotify</a> | <a href="https://9anime.vc">anime</a> | <a href="https://mail.google.com/mail/u/0/#inbox">gmail</a>
+	
+	</div>
+	<div id="tm">
+		<b><span id="hour"><span id="minute"></b>
+	</div>
+	</body>
+	<script>
+	var hr = new Date().getHours();
+	var mn = new Date().getMinutes();
+console.log(hr);
+console.log(mn);
+document.getElementById('hour').innerText=hr+":"+mn;
+
+function refreshTime(){
+const timeDisplay=document.getElementById("hour");
+const tim = new Date().getHours();
+const e = new Date().getMinutes();
+const te = (e<10?'0':'')+e;
+const t = tim+":"+te;
+timeDisplay.textContent=t;
+}
+setInterval(refreshTime,1000);
+</script>
+
+
+</html>
+
